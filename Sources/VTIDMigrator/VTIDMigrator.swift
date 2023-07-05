@@ -1,4 +1,4 @@
-public struct vtid_migrator {
+public struct VTIDMigrator {
     public private(set) var text = "Hello, World!"
 
     public init() {
