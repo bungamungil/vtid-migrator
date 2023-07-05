@@ -1,5 +1,5 @@
 //
-//  CommandContext+Fluent.swift
+//  CommandContext + Migrator.swift
 //  
 //
 //  Created by Bunga Mungil on 05/07/23.
@@ -11,12 +11,8 @@ import FluentKit
 
 extension CommandContext {
     
-    var databases: Databases {
-        VTIDMigrator.config.databases
-    }
-    
     var migrations: Migrations {
-        VTIDMigrator.config.migrations
+        VTIDMigrator.migrations
     }
     
     var migrator: Migrator {
@@ -30,3 +26,5 @@ extension CommandContext {
     }
     
 }
+
+

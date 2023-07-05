@@ -7,6 +7,7 @@
 
 import ConsoleKit
 import FluentKit
+import VTIDCommandUtils
 
 
 public final class MigrateCommand: Command {
