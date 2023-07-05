@@ -1,3 +1,3 @@
 # vtid-migrator
 
-A description of this package.
+Migrate database for VTID project
