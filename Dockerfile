@@ -51,23 +51,19 @@ RUN export DEBIAN_FRONTEND=noninteractive DEBCONF_NONINTERACTIVE_SEEN=true \
     && apt-get -q install -y \
       ca-certificates \
       tzdata \
-# If your app or its dependencies import FoundationNetworking, also install `libcurl4`.
-      libcurl4 \
-# If your app or its dependencies import FoundationXML, also install `libxml2`.
-      libxml2 \
     && rm -r /var/lib/apt/lists/*
 
-# Create a vapor user and group with /app as its home directory
-RUN useradd --user-group --create-home --system --skel /dev/null --home-dir /app vapor
+# Create a vtid user and group with /app as its home directory
+RUN useradd --user-group --create-home --system --skel /dev/null --home-dir /app vtid
 
 # Switch to the new home directory
 WORKDIR /app
 
 # Copy built executable and any staged resources from builder
-COPY --from=build --chown=vapor:vapor /staging /app
+COPY --from=build --chown=vtid:vtid /staging /app
 
-# Ensure all further commands run as the vapor user
-USER vapor:vapor
+# Ensure all further commands run as the vtid user
+USER vtid:vtid
 
 # Let Docker bind to port 8080
 EXPOSE 8080
