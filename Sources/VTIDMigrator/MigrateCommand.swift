@@ -1,8 +1,8 @@
 //
 //  MigrateCommand.swift
-//  
+//  Copied from https://github.com/vapor/fluent/blob/main/Sources/Fluent/MigrateCommand.swift
 //
-//  Created by Bunga Mungil on 05/07/23.
+//  Copyright (c) 2018 Qutheory, LLC
 //
 
 import ConsoleKit
